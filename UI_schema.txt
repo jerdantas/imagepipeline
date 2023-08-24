@@ -1,0 +1,29 @@
+CONTROLE
+			classificar
+			rever
+			treinar
+			gerenciar imagens
+			
+CLASSIFICAR
+			IMAGEM NOVA			    CLASSE
+			imagem					imagem da classe
+			id da imagem			id da imagem
+			combo imagens novas		classe inferida
+									combo de classes		confirmar
+			
+REVER
+			IMAGEM CLASSIFICADA		CLASSE
+			imagem					imagem da classe
+			id e status da imagem	combo de classes	    inferir
+			                                                confirmar
+														    excluir
+			
+TREINAR		
+			iniciar treino / consultar progresso / interromper / confirmar
+
+IMAGENS     IMAGEM EXISTENTE        AÇÃO
+			imagem					incluir novas			escolher arquivos
+			id da imagem			excluir selecionada
+			combo de classes        acrescentar
+			                        excluir
+
