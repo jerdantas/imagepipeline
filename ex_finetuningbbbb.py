@@ -32,7 +32,7 @@ def transform(example_batch):
     return inputs
 
 # ----- prepare dataset -------------------------------------------------------------
-ds = load_dataset(path="imagefolder", data_dir="/home/luiz/___classify/classify/bbbb")
+ds = load_dataset(path="imagefolder", data_dir="/home/luiz/___imagepipeline/imagepipeline/bbbb")
 prepared_ds = ds.with_transform(transform)
 labels = ds['train'].features['label'].names
 
@@ -47,7 +47,7 @@ training_args = TrainingArguments(
   output_dir="./vit-base-bbbb",
   per_device_train_batch_size=16,
   evaluation_strategy="steps",
-  num_train_epochs=5,
+  num_train_epochs=8,
   fp16=True,
   save_steps=100,
   eval_steps=100,

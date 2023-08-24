@@ -5,10 +5,10 @@ import torch
 from PIL import Image
 from transformers import ViTImageProcessor, ViTForImageClassification
 
-processor = ViTImageProcessor.from_pretrained('vit-base-20000/checkpoint-37500')
-model = ViTForImageClassification.from_pretrained('vit-base-2000/checkpoint-37500')
+processor = ViTImageProcessor.from_pretrained('vit-base-bbbb/checkpoint-600')
+model = ViTForImageClassification.from_pretrained('vit-base-bbbb/checkpoint-600')
 
-test_dir = '/home/luiz/___classify/classify/ds20000/test'
+test_dir = '/home/luiz/___imagepipeline/imagepipeline/bbbb/test'
 
 error_count = 0
 test_count = 0
