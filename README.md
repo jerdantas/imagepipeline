@@ -1,2 +1,2 @@
 # imagepipeline
-Image Pipelin
+Image Pipeline
