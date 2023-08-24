@@ -29,7 +29,7 @@ class tkinterApp(tk.Tk):
         self.style.configure(style='TCombobox', font=NORMALFONT)
         self.style.configure(style='TListbox', font=NORMALFONT)
 
-        self.title('Video Analytics - Image Classification')
+        self.title('Video Analytics - Model building and updating pipeline')
         self.screen_factor = 1.0
         if self.winfo_screenwidth() < WINDOW_WIDTH:
             self.screen_factor = 1600./self.winfo_screenwidth()
