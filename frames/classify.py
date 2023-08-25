@@ -54,14 +54,9 @@ class Classify(tk.Frame):
                                          font=NORMALFONT)
         self.listbox_images.bind('<<ListboxSelect>>', self.image_selected)
         self.listbox_images.grid(row=2, rowspan=3, column=0, padx=40, pady=5, ipadx=5, ipady=5, sticky='n')
-
         self.canvas_new = tk.Canvas(self, height=self.image_side, width=self.image_side, relief='solid')
         self.canvas_new.grid(row=2, column=1, padx=40, pady=5, ipadx=5, ipady=5)
-
         self.canvas_cls = tk.Canvas(self, height=self.image_side, width=self.image_side,  relief='solid')
-        image = utils.prepare_image('test_images/dani.png', self.image_side)
-        self.img_cls = ImageTk.PhotoImage(image)
-        self.canvas_cls.create_image(0, 0, anchor=tk.NW, image=self.img_cls)
         self.canvas_cls.grid(row=2, column=2, padx=40, pady=5, ipadx=5, ipady=5)
 
         # 3 ------------------------------------------------------------------------------
@@ -99,12 +94,23 @@ class Classify(tk.Frame):
         self.label_name['text'] = self.new_images[selected_index]
         image = utils.prepare_image(self.new_files[selected_index], self.image_side)
         self.img_new = ImageTk.PhotoImage(image)
-        self.canvas_new.create_image(self.image_side/2, self.image_side/2, anchor=tk.CENTER, image
-        =self.img_new)
+        self.canvas_new.create_image(self.image_side/2, self.image_side/2, anchor=tk.CENTER, image=self.img_new)
+
         # classify and show similar image
         image_class = self.predictor.predict(self.new_files[selected_index])
-        image_class_dir = os.path.join(self.train_dir, image_class)
-        image_similar = utils.prepare_image(self.new_files[selected_index], self.image_side)
+        similar_dir = os.path.join(self.train_dir, image_class)
+        if os.path.exists(similar_dir):
+            similar_images = os.listdir(similar_dir)
+            if len(similar_images) > 0:
+                similar_image = utils.prepare_image(os.path.join(similar_dir, similar_images[0]), self.image_side)
+                self.img_cls = ImageTk.PhotoImage(similar_image)
+                self.canvas_cls.create_image(self.image_side / 2, self.image_side / 2, anchor=tk.CENTER, image=self.img_cls)
+                self.combo_change.set(image_class)
+        else:
+            self.canvas_cls.delete('all')
+            self.combo_change.set('')
+
+
 
     def class_selected(
             self,
