@@ -1,6 +1,5 @@
 import os
 from time import time
-
 import torch
 from PIL import Image
 from transformers import ViTImageProcessor, ViTForImageClassification
