@@ -116,10 +116,15 @@ class Classify(tk.Frame):
             self,
             event
     ) -> None:
-        current_value = self.current_var.get()
-        '''
-        CHANGE INFERENCE
-        '''
+        image_class = self.current_var.get()
+        similar_dir = os.path.join(self.train_dir, image_class)
+        if os.path.exists(similar_dir):
+            similar_images = os.listdir(similar_dir)
+            if len(similar_images) > 0:
+                similar_image = utils.prepare_image(os.path.join(similar_dir, similar_images[0]), self.image_side)
+                self.img_cls = ImageTk.PhotoImage(similar_image)
+                self.canvas_cls.create_image(self.image_side / 2, self.image_side / 2, anchor=tk.CENTER, image=self.img_cls)
+                self.combo_change.set(image_class)
 
     def accept_inference(
             self,
