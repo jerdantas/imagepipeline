@@ -3,6 +3,7 @@ import torch
 from datasets import load_dataset, load_metric
 from transformers import ViTImageProcessor, ViTForImageClassification, TrainingArguments, Trainer
 from time import time
+import os
 
 
 def collate_fn(batch):
@@ -31,8 +32,10 @@ def transform(example_batch):
     inputs['labels'] = example_batch['label']
     return inputs
 
+
 # ----- prepare dataset -------------------------------------------------------------
-ds = load_dataset(path="imagefolder", data_dir="/home/luiz/___imagepipeline/imagepipeline/bbbb")
+root_dir = os.getcwd()
+ds = load_dataset(path="imagefolder", data_dir=os.path.join(root_dir, "bbbb"))
 prepared_ds = ds.with_transform(transform)
 labels = ds['train'].features['label'].names
 

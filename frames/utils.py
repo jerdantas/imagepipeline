@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 
+
 def prepare_image(url: str,
                   side: int
 ) -> Image:

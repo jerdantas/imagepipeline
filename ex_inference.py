@@ -7,7 +7,8 @@ from transformers import ViTImageProcessor, ViTForImageClassification
 processor = ViTImageProcessor.from_pretrained('vit-base-bbbb/checkpoint-600')
 model = ViTForImageClassification.from_pretrained('vit-base-bbbb/checkpoint-600')
 
-test_dir = '/home/luiz/___imagepipeline/imagepipeline/bbbb/test'
+root_dir = os.getcwd()
+test_dir = os.path.join(root_dir, 'bbbb/test')
 
 error_count = 0
 test_count = 0
@@ -30,7 +31,7 @@ for root, dirs, files in os.walk(top=test_dir, topdown=True):
         if file_name.find(class_name) != -1:
             error = ''
         else:
-            error_count+=1
+            error_count += 1
             error = str(error_count)
         print("Class:", class_name,
               "   ", file_name, "   ", error,
