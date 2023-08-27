@@ -82,7 +82,7 @@ class Classify(tk.Frame):
         self.button_return = ttk.Button(self,
                                         text="completed",
                                         command=lambda: controller.show_control())
-        self.button_return.grid(row=6, column=0, columnspan=5, padx=0, pady=50)
+        self.button_return.grid(row=6, column=0, columnspan=5, padx=0, pady=1)
 
     def image_selected(
             self,
@@ -109,7 +109,6 @@ class Classify(tk.Frame):
         else:
             self.canvas_cls.delete('all')
             self.combo_change.set('')
-
 
 
     def class_selected(

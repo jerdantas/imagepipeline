@@ -26,8 +26,6 @@ class Control(tk.Frame):
                                           values=projects, textvariable=self.project_var,
                                           justify=tk.CENTER,             width=20, font=NORMALFONT)
         self.combo_project.grid(row=1, column=1, sticky='W', columnspan=3, padx=0, pady=0)
-
-        # 2 ------------------------------------------------------------------------------
         self.combo_project.bind('<<ComboboxSelected>>', self.project_selected)
         self.combo_project.grid(row=1, column=1, padx=0, pady=0)
 
@@ -43,10 +41,10 @@ class Control(tk.Frame):
         # 3 ------------------------------------------------------------------------------
         label_review = ttk.Label(self, text="Review", font=MEDIUNFONT)
         label_review.grid(row=3, column=0, padx=50, pady=20, sticky='W')
-        button_review = ttk.Button(self, text="review image classification",
+        button_review = ttk.Button(self, text="review classes",
                                  command=lambda: controller.show_frame(Review))
         button_review.grid(row=3, column=1, sticky='W',  padx=50, pady=20)
-        review_comment = ttk.Label(self, text="review and update the classification of existing images", font=NORMALFONT)
+        review_comment = ttk.Label(self, text="review and update classes assigned to existing images", font=NORMALFONT)
         review_comment.grid(row=3, column=2, sticky='W', padx=50, pady=20)
 
         # 4 ------------------------------------------------------------------------------
@@ -55,7 +53,7 @@ class Control(tk.Frame):
         button_train = ttk.Button(self, text="train model",
                                  command=lambda: controller.show_frame(Review))
         button_train.grid(row=4, column=1, sticky='W',  padx=50, pady=20)
-        train_comment = ttk.Label(self, text="train model using existing data", font=NORMALFONT)
+        train_comment = ttk.Label(self, text="train model using existing images", font=NORMALFONT)
         train_comment.grid(row=4, column=2, sticky='W', padx=50, pady=20)
 
         # 5 ------------------------------------------------------------------------------
