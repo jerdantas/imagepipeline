@@ -37,6 +37,5 @@ class Classifier:
                 else:
                     class_name = '[unknown]'
             except Exception() as ex:
-                iiii = 0
                 pass
             return class_name
