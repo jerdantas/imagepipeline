@@ -11,7 +11,7 @@ from frames.config import LARGEFONT, IMAGE_WIDTH
 
 class Test(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        super().__init__(parent)
         self.controller = controller
         self.image_side = int(IMAGE_WIDTH*controller.screen_factor)
 
