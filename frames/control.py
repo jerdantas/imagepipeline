@@ -27,7 +27,6 @@ class Control(tk.Frame):
                                           values=projects, textvariable=self.project_var,
                                           justify=tk.CENTER, width=20, font=NORMALFONT)
         self.combo_project.grid(row=1, column=1, sticky='W', columnspan=3, padx=0, pady=0)
-
         self.combo_project.bind('<<ComboboxSelected>>', self.project_selected)
         self.combo_project.grid(row=1, column=1, padx=0, pady=0)
 

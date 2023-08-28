@@ -25,7 +25,17 @@ class Classifier:
                 duration = (time() - start) * 1000
                 logits = outputs.logits
                 predicted_class_idx = logits.argmax(-1).item()
-                class_name = self.model.config.id2label[predicted_class_idx]
+                smt = logits.softmax(-1)
+                sm = smt[0,predicted_class_idx]
+                n = smt.shape[1]
+                sec = 0.0
+                for i in range(n):
+                    if i != predicted_class_idx and smt[0,i] > sec:
+                        sec = smt[0,i]
+                if sm * 0.5 > sec:
+                    class_name = self.model.config.id2label[predicted_class_idx]
+                else:
+                    class_name = '[unknown]'
             except Exception() as ex:
                 pass
             return class_name
