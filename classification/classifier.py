@@ -32,7 +32,7 @@ class Classifier:
                 for i in range(n):
                     if i != predicted_class_idx and smt[0,i] > sec:
                         sec = smt[0,i]
-                if sm * 0.5 > sec:
+                if sm * 0.5 > sec or sm >= 0.01:
                     class_name = self.model.config.id2label[predicted_class_idx]
                 else:
                     class_name = '[unknown]'
