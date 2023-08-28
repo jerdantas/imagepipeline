@@ -34,6 +34,8 @@ class Detect(tk.Frame):
 
         self.img_new = None
         self.img_res = None
+        self.classlist = tk.StringVar()
+
         # 0 ------------------------------------------------------------------------------
         self.label_title = ttk.Label(self, text="Object Detection", font=LARGEFONT)
         self.label_title.grid(row=0, column=0, columnspan=3, padx=0, pady=20)
@@ -41,7 +43,7 @@ class Detect(tk.Frame):
         # 1 ------------------------------------------------------------------------------
         self.label_col = ttk.Label(self, text="Source Image", font=MEDIUMFONT)
         self.label_col.grid(row=1, column=1, padx=0, pady=0)
-        self.label_inf = ttk.Label(self, text="Detected Image", font=MEDIUMFONT)
+        self.label_inf = ttk.Label(self, text="Detected Objects", font=MEDIUMFONT)
         self.label_inf.grid(row=1, column=2, padx=0, pady=0)
 
         # 2 ------------------------------------------------------------------------------
@@ -61,6 +63,10 @@ class Detect(tk.Frame):
         # 3 ------------------------------------------------------------------------------
         self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
         self.label_name.grid(row=3, column=1, padx=0, pady=0)
+
+        self.classes_label = WrappingLabel(self, height=4, width=68, justify=tk.LEFT)
+        self.classes_label.grid(row=3, column=2, padx=0, pady=0, ipadx=0, ipady=0)
+        self.classes_label.configure(textvariable=self.classlist)
 
         # 4 ------------------------------------------------------------------------------
         # self.button_accept = ttk.Button(self,
@@ -82,6 +88,9 @@ class Detect(tk.Frame):
 
         det_image, boxes = self.model.infer(src_image)
         bboxes, classes, scores = get_box_info(boxes)
+
+        # Build found class list and show
+        self.classlist.set(', '.join([category_index[i]['name'] for i in classes]))
 
         image = adjust_image(src_image, self.image_side)
         self.img_new = ImageTk.PhotoImage(image)
@@ -119,3 +128,10 @@ def get_box_info(boxes):
     bboxes = boxes['bbox']
 
     return np.array(bboxes), np.array(classes), np.array(scores)
+
+
+class WrappingLabel(tk.Label):
+    '''a type of Label that automatically adjusts the wrap to the size'''
+    def __init__(self, master=None, **kwargs):
+        tk.Label.__init__(self, master, **kwargs)
+        self.bind('<Configure>', lambda e: self.config(wraplength=self.winfo_width()))
