@@ -7,7 +7,7 @@ from PIL import ImageTk
 import frames.utils as utils
 from classification.classifier import Classifier
 
-from frames.config import LARGEFONT, IMAGE_WIDTH, NORMALFONT, MEDIUNFONT
+from frames.config import LARGEFONT, IMAGE_WIDTH, NORMALFONT, MEDIUMFONT
 
 
 class Classify(tk.Frame):
@@ -39,11 +39,11 @@ class Classify(tk.Frame):
         self.label_title.grid(row=0, column=0, columnspan=5, padx=0, pady=20)
 
         # 1 ------------------------------------------------------------------------------
-        self.label_col = ttk.Label(self, text="New Images", font=MEDIUNFONT)
+        self.label_col = ttk.Label(self, text="New Images", font=MEDIUMFONT)
         self.label_col.grid(row=1, column=0, padx=0, pady=0)
         # self.label_name = ttk.Label(self, text="[image]", font=MEDIUNFONT)
         # self.label_name.grid(row=1, column=1, padx=0, pady=0)
-        self.label_inf = ttk.Label(self, text="Classification", font=MEDIUNFONT)
+        self.label_inf = ttk.Label(self, text="Classification", font=MEDIUMFONT)
         self.label_inf.grid(row=1, column=2, padx=0, pady=0)
 
         # 2 ------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class Classify(tk.Frame):
         self.canvas_cls.grid(row=2, column=2, padx=40, pady=5, ipadx=5, ipady=5)
 
         # 3 ------------------------------------------------------------------------------
-        self.label_name = ttk.Label(self, text="[image]", font=MEDIUNFONT)
+        self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
         self.label_name.grid(row=3, column=1, padx=0, pady=0)
 
         # 4 ------------------------------------------------------------------------------

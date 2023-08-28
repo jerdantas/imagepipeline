@@ -4,7 +4,7 @@ from typing import List
 
 from frames.classify import Classify
 from frames.detect import Detect
-from frames.config import LARGEFONT, MEDIUNFONT, NORMALFONT
+from frames.config import LARGEFONT, MEDIUMFONT, NORMALFONT
 from frames.review import Review
 from frames.test import Test
 
@@ -19,7 +19,7 @@ class Control(tk.Frame):
         label_title.grid(row=0, column=0, columnspan=4, padx=0, pady=50)
 
         # 1 ------------------------------------------------------------------------------
-        label_project = ttk.Label(self, text="Project:", font=MEDIUNFONT)
+        label_project = ttk.Label(self, text="Project:", font=MEDIUMFONT)
         label_project.grid(row=1, column=0, sticky='W', padx=50, pady=100)
         projects: List[str] = ['classification', 'object detection']
         self.project_var = tk.StringVar()
@@ -32,7 +32,7 @@ class Control(tk.Frame):
         self.combo_project.grid(row=1, column=1, padx=0, pady=0)
 
         # 2 ------------------------------------------------------------------------------
-        label_detect = ttk.Label(self, text="Detect", font=MEDIUNFONT)
+        label_detect = ttk.Label(self, text="Detect", font=MEDIUMFONT)
         label_detect.grid(row=2, column=0, sticky='W', padx=50, pady=20)
         button_detect = ttk.Button(self, text="detect objects",
                                    command=lambda: controller.show_frame(Detect))
@@ -41,7 +41,7 @@ class Control(tk.Frame):
         class_comment.grid(row=2, column=2, sticky='W', padx=50, pady=20)
 
         # 3 ------------------------------------------------------------------------------
-        label_class = ttk.Label(self, text="Classify", font=MEDIUNFONT)
+        label_class = ttk.Label(self, text="Classify", font=MEDIUMFONT)
         label_class.grid(row=3, column=0, sticky='W', padx=50, pady=20)
         button_class = ttk.Button(self, text="classify new images",
                                   command=lambda: controller.show_frame(Classify))
@@ -50,7 +50,7 @@ class Control(tk.Frame):
         class_comment.grid(row=3, column=2, sticky='W', padx=50, pady=20)
 
         # 4 ------------------------------------------------------------------------------
-        label_review = ttk.Label(self, text="Review", font=MEDIUNFONT)
+        label_review = ttk.Label(self, text="Review", font=MEDIUMFONT)
         label_review.grid(row=4, column=0, padx=50, pady=20, sticky='W')
         button_review = ttk.Button(self, text="review image classification",
                                    command=lambda: controller.show_frame(Review))
@@ -60,7 +60,7 @@ class Control(tk.Frame):
         review_comment.grid(row=4, column=2, sticky='W', padx=50, pady=20)
 
         # 5 ------------------------------------------------------------------------------
-        label_train = ttk.Label(self, text="Train", font=MEDIUNFONT)
+        label_train = ttk.Label(self, text="Train", font=MEDIUMFONT)
         label_train.grid(row=5, column=0, padx=50, pady=20, sticky='W')
         button_train = ttk.Button(self, text="train model",
                                   command=lambda: controller.show_frame(Review))
@@ -69,7 +69,7 @@ class Control(tk.Frame):
         train_comment.grid(row=5, column=2, sticky='W', padx=50, pady=20)
 
         # 6 ------------------------------------------------------------------------------
-        label_test = ttk.Label(self, text="Test", font=MEDIUNFONT)
+        label_test = ttk.Label(self, text="Test", font=MEDIUMFONT)
         label_test.grid(row=6, column=0, padx=50, pady=20, sticky='W')
         button_test = ttk.Button(self, text="test",
                                  command=lambda: controller.show_frame(Test))
@@ -78,7 +78,7 @@ class Control(tk.Frame):
         test_comment.grid(row=6, column=2, sticky='W', padx=50, pady=20)
 
         # 7 ------------------------------------------------------------------------------
-        label_manage = ttk.Label(self, text="Manage", font=MEDIUNFONT)
+        label_manage = ttk.Label(self, text="Manage", font=MEDIUMFONT)
         label_manage.grid(row=7, column=0, padx=50, pady=20, sticky='W')
         button_manage = ttk.Button(self, text="manage images",
                                    command=lambda: controller.show_frame(Review))
