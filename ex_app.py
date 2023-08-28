@@ -34,7 +34,7 @@ class tkinterApp(tk.Tk):
         self.title('Video Analytics - Model building and updating pipeline')
         self.screen_factor = 1.0
         if self.winfo_screenwidth() < WINDOW_WIDTH:
-            self.screen_factor = 1600./self.winfo_screenwidth()
+            self.screen_factor = WINDOW_WIDTH/self.winfo_screenwidth()
         window_width = int(WINDOW_WIDTH*self.screen_factor)
         window_height = int(WINDOW_HEIGHT*self.screen_factor)
         self.geometry(f'{window_width}x{window_height}')

@@ -64,7 +64,7 @@ class Detect(tk.Frame):
         self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
         self.label_name.grid(row=3, column=1, padx=0, pady=0)
 
-        self.classes_label = WrappingLabel(self, height=4, width=68, justify=tk.LEFT)
+        self.classes_label = WrappingLabel(self, height=4, width=32, justify=tk.LEFT, font=MEDIUMFONT)
         self.classes_label.grid(row=3, column=2, padx=0, pady=0, ipadx=0, ipady=0)
         self.classes_label.configure(textvariable=self.classlist)
 
