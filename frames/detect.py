@@ -60,7 +60,7 @@ class Detect(tk.Frame):
 
         # 3 ------------------------------------------------------------------------------
         self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
-        self.label_name.grid(row=3, column=0, padx=0, pady=0)
+        self.label_name.grid(row=3, column=1, padx=0, pady=0)
 
         # 4 ------------------------------------------------------------------------------
         # self.button_accept = ttk.Button(self,
