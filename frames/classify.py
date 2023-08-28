@@ -2,7 +2,6 @@ import os
 import tkinter as tk
 from tkinter import ttk
 from typing import List
-
 from PIL import Image, ImageTk
 import frames.utils as utils
 from classification.classifier import Classifier
