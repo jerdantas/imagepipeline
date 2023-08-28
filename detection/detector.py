@@ -1,6 +1,5 @@
 import os
-import cv2 as cv
-import numpy as np
+from PIL import Image
 from typing import List
 
 import torch
@@ -19,23 +18,17 @@ class Detector:
         input_shape = (1, 640, 640, 3)
 
         n, self.frameHeight, self.frameWidth, c = input_shape
-        self.images = np.ndarray(shape=(n, self.frameHeight, self.frameWidth, c), dtype=np.float32)
 
     '''
     Examine the image to detect objects
     :return: frame, boxes
     '''
-    def infer(self, frame):
-        if not self.do_inference:
-            return frame, None
-        ih, iw = frame.shape[:-1]
+    def infer(self, frame: Image) -> [Image, dict]:
+        ih, iw = frame.size
         if (ih, iw) != (self.frameHeight, self.frameWidth):
-            image = cv.resize(frame, (self.frameWidth, self.frameHeight))
+            image = frame.resize((self.frameHeight, self.frameWidth))
         else:
             image = frame
-        # Temporarily supress next 2 lines
-        # image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-        # self.images[0] = (np.float32(image) - 127.5) / 127.5
 
         # run model
         results: List[Results] = self.interpreter.predict(image, imgsz=640,
