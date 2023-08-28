@@ -32,7 +32,7 @@ class Detector:
 
         # run model
         results: List[Results] = self.interpreter.predict(image, imgsz=640,
-                                                          conf=0.4, verbose=False,
+                                                          conf=0.2, verbose=False,
                                                           show=False, save=False)
 
         # get results
