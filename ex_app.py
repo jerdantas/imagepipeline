@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
+from os import path
 
 from frames.classify import Classify
+from frames.detect import Detect
 from frames.config import NORMALFONT, WINDOW_WIDTH, WINDOW_HEIGHT
 from frames.control import Control
 from frames.manage import Manage
@@ -13,7 +15,7 @@ from frames.train import Train
 class tkinterApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         container = tk.Frame(self)
 
@@ -43,7 +45,7 @@ class tkinterApp(tk.Tk):
         container.grid_columnconfigure(index=0, weight=1)
 
         self.frames = {}
-        for page in (Control, Classify, Train, Manage, Review, Test):
+        for page in (Control, Detect, Classify, Train, Manage, Review, Test):
             frame = page(container, self)
             self.frames[page] = frame
             frame.grid(row=0, column=0, sticky="nsew")
