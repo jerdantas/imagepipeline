@@ -56,17 +56,17 @@ class Detect(tk.Frame):
         self.listbox_images.bind('<<ListboxSelect>>', self.image_selected)
         self.listbox_images.grid(row=2, rowspan=3, column=0, padx=40, pady=5, ipadx=5, ipady=5, sticky='n')
         self.canvas_src = tk.Canvas(self, height=self.image_side, width=self.image_side, relief='solid')
-        self.canvas_src.grid(row=2, column=1, padx=40, pady=5, ipadx=5, ipady=5)
+        self.canvas_src.grid(row=2, column=1, padx=40, pady=5)
         self.canvas_res = tk.Canvas(self, height=self.image_side, width=self.image_side, relief='solid')
-        self.canvas_res.grid(row=2, column=2, padx=0, pady=0, ipadx=0, ipady=0)
+        self.canvas_res.grid(row=2, column=2, padx=0, pady=0)
 
         # 3 ------------------------------------------------------------------------------
         self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
         self.label_name.grid(row=3, column=1, padx=0, pady=0)
 
-        self.classes_label = WrappingLabel(self, height=4, width=32, justify=tk.LEFT, font=MEDIUMFONT)
-        self.classes_label.grid(row=3, column=2, padx=0, pady=0, ipadx=0, ipady=0)
+        self.classes_label = WrappingLabel(self, height=4, width=25, justify=tk.LEFT, font=MEDIUMFONT)
         self.classes_label.configure(textvariable=self.classlist)
+        self.classes_label.grid(row=3, column=2, padx=0, pady=0, ipadx=0, ipady=0)
 
         # 4 ------------------------------------------------------------------------------
         # self.button_accept = ttk.Button(self,
