@@ -40,18 +40,18 @@ class Control(tk.Frame):
         class_comment.grid(row=2, column=2, sticky='W', padx=50, pady=20)
 
         # 3 ------------------------------------------------------------------------------
-        label_class = ttk.Label(self, text="Classify", font=MEDIUMFONT)
+        label_class = ttk.Label(self, text="Label", font=MEDIUMFONT)
         label_class.grid(row=3, column=0, sticky='W', padx=50, pady=20)
-        button_class = ttk.Button(self, text="classify new images",
+        button_class = ttk.Button(self, text="label new images",
                                   command=lambda: controller.show_frame(Classify))
         button_class.grid(row=3, column=1, sticky='W', padx=50, pady=20)
-        class_comment = ttk.Label(self, text="submit new images to VA Image Classifier", font=NORMALFONT)
+        class_comment = ttk.Label(self, text="use current Classifier and define new classes as needed", font=NORMALFONT)
         class_comment.grid(row=3, column=2, sticky='W', padx=50, pady=20)
 
         # 4 ------------------------------------------------------------------------------
         label_review = ttk.Label(self, text="Review", font=MEDIUMFONT)
         label_review.grid(row=4, column=0, padx=50, pady=20, sticky='W')
-        button_review = ttk.Button(self, text="review image classification",
+        button_review = ttk.Button(self, text="review image labels",
                                    command=lambda: controller.show_frame(Review))
         button_review.grid(row=4, column=1, sticky='W', padx=50, pady=20)
         review_comment = ttk.Label(self, text="review and update the classification of existing images",

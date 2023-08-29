@@ -33,7 +33,7 @@ class Classify(tk.Frame):
                 self.new_files.append(os.path.join(root, name))
 
         # 0 ------------------------------------------------------------------------------
-        self.label_title = ttk.Label(self, text="Classify New Images", font=LARGEFONT)
+        self.label_title = ttk.Label(self, text="Label New Images", font=LARGEFONT)
         self.label_title.grid(row=0, column=0, columnspan=5, padx=0, pady=20)
 
         # 1 ------------------------------------------------------------------------------
