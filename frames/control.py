@@ -7,6 +7,7 @@ from frames.detect import Detect
 from frames.config import LARGEFONT, MEDIUMFONT, NORMALFONT
 from frames.review import Review
 from frames.test import Test
+from frames.train import Train
 
 
 class Control(tk.Frame):
@@ -62,7 +63,7 @@ class Control(tk.Frame):
         label_train = ttk.Label(self, text="Train", font=MEDIUMFONT)
         label_train.grid(row=5, column=0, padx=50, pady=20, sticky='W')
         button_train = ttk.Button(self, text="train model",
-                                  command=lambda: controller.show_frame(Review))
+                                  command=lambda: controller.show_frame(Train))
         button_train.grid(row=5, column=1, sticky='W', padx=50, pady=20)
         train_comment = ttk.Label(self, text="train model using existing data", font=NORMALFONT)
         train_comment.grid(row=5, column=2, sticky='W', padx=50, pady=20)

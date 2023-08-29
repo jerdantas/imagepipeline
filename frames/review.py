@@ -33,7 +33,7 @@ class Review(tk.Frame):
                 self.train_files.append(os.path.join(root, name))
 
         # 0 ------------------------------------------------------------------------------
-        self.label_title = ttk.Label(self, text="Review Images Labels", font=LARGEFONT)
+        self.label_title = ttk.Label(self, text="Review Image Labels", font=LARGEFONT)
         self.label_title.grid(row=0, column=0, columnspan=5, padx=0, pady=20)
 
         # 1 ------------------------------------------------------------------------------

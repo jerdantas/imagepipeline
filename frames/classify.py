@@ -26,7 +26,7 @@ class Classify(tk.Frame):
 
         self.new_images: List[str] = []
         self.new_files: List[str] = []
-        new_dir = os.path.join(root_dir, 'bbbb/test')          # PARAMETER
+        new_dir = os.path.join(root_dir, 'bbbb/new_images')          # PARAMETER
         for root, dirs, files in os.walk(top=new_dir, topdown=True):
             for name in files:
                 self.new_images.append(name)
