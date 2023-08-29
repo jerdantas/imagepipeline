@@ -19,16 +19,16 @@ class Control(tk.Frame):
         label_title.grid(row=0, column=0, columnspan=4, padx=0, pady=50)
 
         # 1 ------------------------------------------------------------------------------
-        label_project = ttk.Label(self, text="Project:", font=MEDIUMFONT)
-        label_project.grid(row=1, column=0, sticky='W', padx=50, pady=100)
-        projects: List[str] = ['classification', 'object detection']
-        self.project_var = tk.StringVar()
-        self.combo_project = ttk.Combobox(self, exportselection=False, height=5, state='readonly',
-                                          values=projects, textvariable=self.project_var,
-                                          justify=tk.CENTER, width=20, font=NORMALFONT)
-        self.combo_project.grid(row=1, column=1, sticky='W', columnspan=3, padx=0, pady=0)
-        self.combo_project.bind('<<ComboboxSelected>>', self.project_selected)
-        self.combo_project.grid(row=1, column=1, padx=0, pady=0)
+        # label_project = ttk.Label(self, text="Project:", font=MEDIUMFONT)
+        # label_project.grid(row=1, column=0, sticky='W', padx=50, pady=100)
+        # projects: List[str] = ['classification', 'object detection']
+        # self.project_var = tk.StringVar()
+        # self.combo_project = ttk.Combobox(self, exportselection=False, height=5, state='readonly',
+        #                                   values=projects, textvariable=self.project_var,
+        #                                   justify=tk.CENTER, width=20, font=NORMALFONT)
+        # self.combo_project.grid(row=1, column=1, sticky='W', columnspan=3, padx=0, pady=0)
+        # self.combo_project.bind('<<ComboboxSelected>>', self.project_selected)
+        # self.combo_project.grid(row=1, column=1, padx=0, pady=0)
 
         # 2 ------------------------------------------------------------------------------
         label_detect = ttk.Label(self, text="Detect", font=MEDIUMFONT)
