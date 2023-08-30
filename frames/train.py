@@ -36,11 +36,11 @@ class Train(tk.Frame):
         self.label_col.grid(row=1, column=0, padx=0, pady=0)
 
         # 2 ------------------------------------------------------------------------------
-        self.label_name = ttk.Label(frame, text="class count}: " + str(class_count), font=MEDIUMFONT)
+        self.label_name = ttk.Label(frame, text="class count: " + str(class_count), font=MEDIUMFONT)
         self.label_name.grid(row=2, column=0, padx=0, pady=0)
 
         # 3 ------------------------------------------------------------------------------
-        self.label_name = ttk.Label(frame, text="image count}: " + str(image_count), font=MEDIUMFONT)
+        self.label_name = ttk.Label(frame, text="image count: " + str(image_count), font=MEDIUMFONT)
         self.label_name.grid(row=3, column=0, padx=0, pady=0)
 
         # 4 ------------------------------------------------------------------------------

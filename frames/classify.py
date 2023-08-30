@@ -64,8 +64,8 @@ class Classify(tk.Frame):
 
         # 4 ------------------------------------------------------------------------------
         classes: List[str] = self.classes
-        self.current_var = tk.StringVar()
-        self.combo_change = ttk.Combobox(self, exportselection=False, height=5, state='readonly',
+        self.current_var = tk.StringVar()   # state='readonly',
+        self.combo_change = ttk.Combobox(self, exportselection=False, height=5,
                                          values=classes, textvariable=self.current_var,
                                          justify=tk.CENTER,             width=20, font=NORMALFONT)
         self.combo_change.bind('<<ComboboxSelected>>', self.class_selected)

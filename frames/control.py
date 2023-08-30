@@ -5,6 +5,7 @@ from typing import List
 from frames.classify import Classify
 from frames.detect import Detect
 from frames.config import LARGEFONT, MEDIUMFONT, NORMALFONT
+from frames.manage import Manage
 from frames.review import Review
 from frames.test import Test
 from frames.train import Train
@@ -69,9 +70,9 @@ class Control(tk.Frame):
         train_comment.grid(row=5, column=2, sticky='W', padx=50, pady=20)
 
         # 6 ------------------------------------------------------------------------------
-        label_test = ttk.Label(self, text="Test", font=MEDIUMFONT)
+        label_test = ttk.Label(self, text="Evaluate", font=MEDIUMFONT)
         label_test.grid(row=6, column=0, padx=50, pady=20, sticky='W')
-        button_test = ttk.Button(self, text="test",
+        button_test = ttk.Button(self, text="evaluate model",
                                  command=lambda: controller.show_frame(Test))
         button_test.grid(row=6, column=1, sticky='W', padx=50, pady=20)
         test_comment = ttk.Label(self, text="calculate current metrics using test dataset", font=NORMALFONT)
@@ -81,16 +82,16 @@ class Control(tk.Frame):
         label_manage = ttk.Label(self, text="Manage", font=MEDIUMFONT)
         label_manage.grid(row=7, column=0, padx=50, pady=20, sticky='W')
         button_manage = ttk.Button(self, text="manage images",
-                                   command=lambda: controller.show_frame(Review))
+                                   command=lambda: controller.show_frame(Manage))
         button_manage.grid(row=7, column=1, sticky='W', padx=50, pady=20)
         manage_comment = ttk.Label(self, text="add new images and remove existing messages", font=NORMALFONT)
         manage_comment.grid(row=7, column=2, sticky='W', padx=50, pady=20)
 
-    def project_selected(
-            self,
-            event
-    ) -> None:
-        current_value = self.project_var.get()
-        '''
-        CHANGE PROJECT
-        '''
+    # def project_selected(
+    #         self,
+    #         event
+    # ) -> None:
+    #     current_value = self.project_var.get()
+    #     '''
+    #     CHANGE PROJECT
+    #     '''

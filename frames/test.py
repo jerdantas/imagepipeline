@@ -15,10 +15,11 @@ class Test(tk.Frame):
         class_count = 0
         image_count = 0
         root_dir = os.getcwd()
-        self.test_dir = os.path.join(root_dir, 'bbbb/test')       # PARAMETER
-        for root, dirs, files in os.walk(top=self.test_dir, topdown=True):
+        self.train_dir = os.path.join(root_dir, 'bbbb/test')       # PARAMETER
+        for root, dirs, files in os.walk(top=self.train_dir, topdown=True):
             for dir in dirs:
                 class_count += 1
+        self.test_dir = os.path.join(root_dir, 'bbbb/test')       # PARAMETER
         for root, dirs, files in os.walk(top=self.test_dir, topdown=True):
             for name in files:
                 image_count += 1
@@ -27,7 +28,7 @@ class Test(tk.Frame):
         frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
         # 0 ------------------------------------------------------------------------------
-        self.label_title = ttk.Label(frame, text="Test Model", font=LARGEFONT)
+        self.label_title = ttk.Label(frame, text="Evaluate Model", font=LARGEFONT)
         self.label_title.grid(row=0, column=0, padx=0, pady=70)
 
         # 1 ------------------------------------------------------------------------------

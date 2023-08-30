@@ -1,16 +1,16 @@
+import os
 import tkinter as tk
-from tkinter import ttk
-from frames.config import LARGEFONT
+from tkinter import ttk, CENTER
+
+from classification.classifier import Classifier
+from frames.config import LARGEFONT, IMAGE_WIDTH, MEDIUMFONT, WINDOW_WIDTH
 
 
 class Manage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
-        label = ttk.Label(self, text="Images", font=LARGEFONT)
-        label.grid(row=0, column=4, padx=10, pady=10)
-        button_return = ttk.Button(self,
-                                   text="Options",
-                                   command=lambda: controller.show_control())
-        button_return.grid(row=2, column=1, padx=10, pady=10)
-
-
+        self.controller = controller
+        self.button_return = ttk.Button(self,
+                                        text="completed",
+                                        command=lambda: controller.show_control())
+        self.button_return.grid(row=6, column=0, padx=0, pady=30)
