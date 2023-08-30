@@ -4,10 +4,12 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import numpy as np
 import glob
+from typing import List
 
 from detection.detector import Detector
+from detection.analyse import Alarm, Box, NonCompliance
 import viz_utils
-from frames.config import LARGEFONT, DETECT_IMAGE_WIDTH, NORMALFONT, MEDIUMFONT
+from frames.config import LARGEFONT, DETECT_IMAGE_WIDTH, NORMALFONT, MEDIUMFONT, SMALLFONT
 
 category_index = {
     0: {'id': 0, 'name': 'eye-glass'},
@@ -64,21 +66,16 @@ class Detect(tk.Frame):
         self.label_name = ttk.Label(self, text="[image]", font=MEDIUMFONT)
         self.label_name.grid(row=3, column=1, padx=0, pady=0)
 
-        self.classes_label = WrappingLabel(self, height=4, width=25, justify=tk.LEFT, font=MEDIUMFONT)
-        self.classes_label.configure(textvariable=self.classlist)
+        self.classes_label = WrappingLabel(self, height=8, width=56, justify=tk.LEFT,
+                                           font=SMALLFONT)
         self.classes_label.grid(row=3, column=2, padx=0, pady=0, ipadx=0, ipady=0)
+        self.classes_label.configure(textvariable=self.classlist)
 
         # 4 ------------------------------------------------------------------------------
-        # self.button_accept = ttk.Button(self,
-        #                                 text="accept",
-        #                                 command=lambda: self.accept_inference)
-        # self.button_accept.grid(row=5, column=2, padx=0, pady=20)
-
-        # 5 ------------------------------------------------------------------------------
         self.button_return = ttk.Button(self,
                                         text="Return",
                                         command=lambda: controller.show_control())
-        self.button_return.grid(row=6, column=0, columnspan=3, padx=0, pady=50)
+        self.button_return.grid(row=4, column=0, columnspan=3, padx=0, pady=50)
 
     def image_selected(self, event) -> None:
         # show selected image
@@ -86,18 +83,44 @@ class Detect(tk.Frame):
         self.label_name['text'] = self.img_names[selected_index]
         src_image = Image.open(self.images[selected_index])
 
-        det_image, boxes = self.model.infer(src_image)
-        bboxes, classes, scores = get_box_info(boxes)
+        det_image, result = self.model.infer(src_image)
+        bboxes, classes, scores = get_box_info(result)
 
-        # Build found class list and show
-        self.classlist.set(', '.join([category_index[i]['name'] for i in classes]))
+        alarm = Alarm()
+
+        i = 0
+        while i < len(bboxes):
+            box = Box(list(bboxes[i]), src_image.height, src_image.width, normalized=True)
+            cls = int(classes[i])
+            score = float(scores[i])
+
+            if alarm.add_target(category_index[cls]['name'], cls, box, score) >= 0:
+                i += 1
+            else:
+                # Target has been discarded
+                bboxes = np.delete(bboxes, i, 0)
+                classes = np.delete(classes, i, 0)
+                scores = np.delete(scores, i, 0)
+
+        problems: List[NonCompliance] = alarm.get_alarms()
+        reason_list = []
+        for prob in problems:
+            t = ''
+            if prob.target_id is not None:
+                t = f'{prob.category_name}-{prob.target_id}: '
+            t += prob.reason
+            reason_list += [t]
+
+        reason = ' \n'.join([p for p in reason_list])
+        self.classlist.set(reason)
 
         image = adjust_image(src_image, self.image_side)
         self.img_new = ImageTk.PhotoImage(image)
         self.canvas_src.create_image(self.image_side / 2, self.image_side / 2,
                                      anchor=tk.CENTER, image=self.img_new)
 
-        viz_utils.visualize_boxes_and_labels_on_image_array(det_image, bboxes, classes, scores,
+        image = adjust_image(det_image, self.image_side)
+        viz_utils.visualize_boxes_and_labels_on_image_array(image, bboxes, classes, scores,
                                                             category_index,
                                                             use_normalized_coordinates=True,
                                                             max_boxes_to_draw=20,
@@ -106,7 +129,6 @@ class Detect(tk.Frame):
                                                             skip_labels=False,
                                                             skip_scores=False)
 
-        image = adjust_image(det_image, self.image_side)
         self.img_res = ImageTk.PhotoImage(image)
         self.canvas_res.create_image(self.image_side / 2, self.image_side / 2,
                                      anchor=tk.CENTER, image=self.img_res)
