@@ -1,6 +1,7 @@
 LARGEFONT = ("Verdana", 22, 'bold')
 MEDIUMFONT = ("Verdana", 18, 'bold')
 NORMALFONT = ("Verdana", 14, 'bold')
+SMALLFONT = ("Verdana", 10, 'bold')
 
 WINDOW_WIDTH = 1600
 WINDOW_HEIGHT = 900
