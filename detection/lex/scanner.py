@@ -37,21 +37,20 @@ class Scanner:
             kind = TokenType[mo.lastgroup]
             value = mo.group()
             column = mo.start() - line_start
-            match kind:
-                case TokenType.REAL:
-                    value = float(value)
-                case TokenType.INT:
-                    value = int(value)
-                case TokenType.WORD:
-                    if value in _keywords.keys():
-                        kind = TokenType[_keywords[value]]
-                    value = 0
-                case TokenType.EOT:
-                    line_start = mo.end()
-                case TokenType.SKIP:
-                    continue
-                case TokenType.INVALID:
-                    raise RuntimeError(f'{value!r} unexpected on column {column+1}')
+            if kind== TokenType.REAL:
+                value = float(value)
+            elif kind == TokenType.INT:
+                value = int(value)
+            elif kind == TokenType.WORD:
+                if value in _keywords.keys():
+                    kind = TokenType[_keywords[value]]
+                value = 0
+            elif kind == TokenType.EOT:
+                line_start = mo.end()
+            elif kind == TokenType.SKIP:
+                continue
+            elif kind == TokenType.INVALID:
+                raise RuntimeError(f'{value!r} unexpected on column {column+1}')
             self.tokenlist.append(Token(mo.group(), kind, value))
 
         self.tokenlist.append(Token('', TokenType.EOT,))
