@@ -8,7 +8,7 @@ from transformers import ViTImageProcessor, ViTForImageClassification
 class Classifier:
     
     def __init__(self):
-        model_name = 'vit-base-bbbb/checkpoint-600'                                   # PARAMETER
+        model_name = 'vit-base-dddd/checkpoint-300'                                   # PARAMETER
         self.processor = ViTImageProcessor.from_pretrained(model_name)
         self.model = ViTForImageClassification.from_pretrained(model_name)
 
@@ -25,6 +25,8 @@ class Classifier:
                 duration = (time() - start) * 1000
                 logits = outputs.logits
                 predicted_class_idx = logits.argmax(-1).item()
+                class_name = self.model.config.id2label[predicted_class_idx]
+
                 smt = logits.softmax(-1)
                 sm = smt[0,predicted_class_idx]
                 n = smt.shape[1]

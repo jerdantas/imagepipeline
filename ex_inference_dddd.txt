@@ -1,0 +1,83 @@
+/home/luiz/___imagepipeline/imagepipeline/venv/bin/python /home/luiz/___imagepipeline/imagepipeline/ex_inference_dddd.py
+Class: pistachios     /home/luiz/___imagepipeline/imagepipeline/dddd/test/pistachios/5.jpg          131.27946853637695
+Class: pistachios     /home/luiz/___imagepipeline/imagepipeline/dddd/test/pistachios/2.jpg          118.64995956420898
+Class: pistachios     /home/luiz/___imagepipeline/imagepipeline/dddd/test/pistachios/1.jpg          112.8091812133789
+Class: pistachios     /home/luiz/___imagepipeline/imagepipeline/dddd/test/pistachios/3.jpg          112.1513843536377
+Class: pistachios     /home/luiz/___imagepipeline/imagepipeline/dddd/test/pistachios/4.jpg          120.44048309326172
+Class: fencing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/fencing/5.jpg          119.15874481201172
+Class: fencing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/fencing/2.jpg          121.33955955505371
+Class: fencing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/fencing/1.jpg          112.09607124328613
+Class: fencing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/fencing/3.jpg          119.06814575195312
+Class: fencing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/fencing/4.jpg          116.78266525268555
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/24.jpg          120.82171440124512
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/67.jpg          116.74904823303223
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/8.jpg          122.70331382751465
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/66.jpg          128.14998626708984
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/54.jpg          123.64864349365234
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/21.jpg          112.55550384521484
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/13.jpg          120.49627304077148
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/99.jpg          119.91143226623535
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/37.jpg          116.42217636108398
+Class: 3-15     /home/luiz/___imagepipeline/imagepipeline/dddd/test/3-15/78.jpg          119.97580528259277
+Class: king of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/king of hearts/5.jpg          623.4617233276367
+Class: king of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/king of hearts/2.jpg          133.56447219848633
+Class: king of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/king of hearts/1.jpg          142.82560348510742
+Class: king of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/king of hearts/3.jpg          112.78629302978516
+Class: king of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/king of hearts/4.jpg          119.20499801635742
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/79.jpg          119.79389190673828
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/52.jpg          115.12994766235352
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/85.jpg          127.21371650695801
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/36.jpg     1     117.81716346740723
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/61.jpg          124.01628494262695
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/38.jpg          117.7678108215332
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/9.jpg          115.44561386108398
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/64.jpg          119.62389945983887
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/44.jpg          129.4710636138916
+Class: 1-40     /home/luiz/___imagepipeline/imagepipeline/dddd/test/1-40/78.jpg          119.39835548400879
+Class: bike polo     /home/luiz/___imagepipeline/imagepipeline/dddd/test/bike polo/5.jpg          122.64752388000488
+Class: bike polo     /home/luiz/___imagepipeline/imagepipeline/dddd/test/bike polo/2.jpg          120.49746513366699
+Class: bike polo     /home/luiz/___imagepipeline/imagepipeline/dddd/test/bike polo/1.jpg          125.91433525085449
+Class: bike polo     /home/luiz/___imagepipeline/imagepipeline/dddd/test/bike polo/3.jpg          118.38579177856445
+Class: bike polo     /home/luiz/___imagepipeline/imagepipeline/dddd/test/bike polo/4.jpg          116.21475219726562
+Class: ace of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/ace of hearts/5.jpg          144.6542739868164
+Class: ace of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/ace of hearts/2.jpg          132.0023536682129
+Class: ace of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/ace of hearts/1.jpg          127.99406051635742
+Class: ace of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/ace of hearts/3.jpg          124.91345405578613
+Class: ace of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/ace of hearts/4.jpg          120.05734443664551
+Class: macadamia     /home/luiz/___imagepipeline/imagepipeline/dddd/test/macadamia/5.jpg          127.13623046875
+Class: macadamia     /home/luiz/___imagepipeline/imagepipeline/dddd/test/macadamia/2.jpg          119.07339096069336
+Class: macadamia     /home/luiz/___imagepipeline/imagepipeline/dddd/test/macadamia/1.jpg          118.82519721984863
+Class: macadamia     /home/luiz/___imagepipeline/imagepipeline/dddd/test/macadamia/3.jpg          118.15953254699707
+Class: macadamia     /home/luiz/___imagepipeline/imagepipeline/dddd/test/macadamia/4.jpg          127.97784805297852
+Class: jack of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/jack of hearts/5.jpg          120.03779411315918
+Class: jack of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/jack of hearts/2.jpg          127.69079208374023
+Class: jack of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/jack of hearts/1.jpg          120.17488479614258
+Class: jack of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/jack of hearts/3.jpg          125.29945373535156
+Class: jack of hearts     /home/luiz/___imagepipeline/imagepipeline/dddd/test/jack of hearts/4.jpg          120.30625343322754
+Class: coconut     /home/luiz/___imagepipeline/imagepipeline/dddd/test/coconut/5.jpg          120.71442604064941
+Class: coconut     /home/luiz/___imagepipeline/imagepipeline/dddd/test/coconut/2.jpg          116.8057918548584
+Class: coconut     /home/luiz/___imagepipeline/imagepipeline/dddd/test/coconut/1.jpg          123.74472618103027
+Class: coconut     /home/luiz/___imagepipeline/imagepipeline/dddd/test/coconut/3.jpg          118.81589889526367
+Class: coconut     /home/luiz/___imagepipeline/imagepipeline/dddd/test/coconut/4.jpg          118.4380054473877
+Class: boxing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/boxing/5.jpg          128.83734703063965
+Class: boxing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/boxing/2.jpg          124.28450584411621
+Class: boxing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/boxing/1.jpg          123.17204475402832
+Class: boxing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/boxing/3.jpg          117.80118942260742
+Class: boxing     /home/luiz/___imagepipeline/imagepipeline/dddd/test/boxing/4.jpg          120.18680572509766
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/67.jpg          125.96487998962402
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/17.jpg          122.8189468383789
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/12.jpg          117.93327331542969
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/29.jpg          125.98705291748047
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/69.jpg          123.8100528717041
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/26.jpg          124.70698356628418
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/44.jpg          117.5234317779541
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/48.jpg          120.4371452331543
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/47.jpg          127.10309028625488
+Class: 6-50     /home/luiz/___imagepipeline/imagepipeline/dddd/test/6-50/33.jpg          130.28860092163086
+test_count =  75
+Error count  =  1
+accuracy =  0.9866666666666667
+True
+False
+
+Process finished with exit code 0

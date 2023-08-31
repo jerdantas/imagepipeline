@@ -15,11 +15,11 @@ class Test(tk.Frame):
         class_count = 0
         image_count = 0
         root_dir = os.getcwd()
-        self.train_dir = os.path.join(root_dir, 'bbbb/test')       # PARAMETER
+        self.train_dir = os.path.join(root_dir, 'dddd/test')       # PARAMETER
         for root, dirs, files in os.walk(top=self.train_dir, topdown=True):
             for dir in dirs:
                 class_count += 1
-        self.test_dir = os.path.join(root_dir, 'bbbb/test')       # PARAMETER
+        self.test_dir = os.path.join(root_dir, 'dddd/test')       # PARAMETER
         for root, dirs, files in os.walk(top=self.test_dir, topdown=True):
             for name in files:
                 image_count += 1

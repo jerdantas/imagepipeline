@@ -19,14 +19,14 @@ class Classify(tk.Frame):
 
         self.classes: List[str] = []
         root_dir = os.getcwd()
-        self.train_dir = os.path.join(root_dir, 'bbbb/train')       # PARAMETER
+        self.train_dir = os.path.join(root_dir, 'dddd/train')       # PARAMETER
         for root, dirs, files in os.walk(top=self.train_dir, topdown=True):
             for dir in dirs:
                 self.classes.append(dir)
 
         self.new_images: List[str] = []
         self.new_files: List[str] = []
-        new_dir = os.path.join(root_dir, 'bbbb/new_images')          # PARAMETER
+        new_dir = os.path.join(root_dir, 'dddd/new_images')          # PARAMETER
         for root, dirs, files in os.walk(top=new_dir, topdown=True):
             for name in files:
                 self.new_images.append(name)

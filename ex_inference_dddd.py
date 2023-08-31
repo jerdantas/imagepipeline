@@ -4,8 +4,8 @@ import torch
 from PIL import Image
 from transformers import ViTImageProcessor, ViTForImageClassification
 
-processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224-in21k')
-model = ViTForImageClassification.from_pretrained('vit-base-dddd/checkpoint-400')
+processor = ViTImageProcessor.from_pretrained('vit-base-dddd/checkpoint-300')
+model = ViTForImageClassification.from_pretrained('vit-base-dddd/checkpoint-300')
 
 root_dir = os.getcwd()
 test_dir = os.path.join(root_dir, 'dddd/test')
@@ -27,19 +27,19 @@ for root, dirs, files in os.walk(top=test_dir, topdown=True):
         duration = (time() - start) * 1000
         logits = outputs.logits
         predicted_class_idx = logits.argmax(-1).item()
-        # class_name = model.config.id2label[predicted_class_idx]
+        class_name = model.config.id2label[predicted_class_idx]
         # -------------------------------------------------------
-        smt = logits.softmax(-1)
-        sm = smt[0, predicted_class_idx]
-        n = smt.shape[1]
-        sec = 0.0
-        for i in range(n):
-            if i != predicted_class_idx and smt[0, i] > sec:
-                sec = smt[0, i]
-        if sm * 0.5 > sec or sm >= 0.01:
-            class_name = model.config.id2label[predicted_class_idx]
-        else:
-            class_name = '[unknown]'
+        # smt = logits.softmax(-1)
+        # sm = smt[0, predicted_class_idx]
+        # n = smt.shape[1]
+        # sec = 0.0
+        # for i in range(n):
+        #     if i != predicted_class_idx and smt[0, i] > sec:
+        #         sec = smt[0, i]
+        # if sm * 0.5 > sec or sm >= 0.01:
+        #     class_name = model.config.id2label[predicted_class_idx]
+        # else:
+        #     class_name = '[unknown]'
         # -------------------------------------------------------
         if file_name.find(class_name) != -1:
             error = ''

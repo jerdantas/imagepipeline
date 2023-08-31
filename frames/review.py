@@ -19,14 +19,14 @@ class Review(tk.Frame):
 
         self.classes: List[str] = []
         root_dir = os.getcwd()
-        self.train_dir = os.path.join(root_dir, 'bbbb/train')       # PARAMETER
+        self.train_dir = os.path.join(root_dir, 'dddd/train')       # PARAMETER
         for root, dirs, files in os.walk(top=self.train_dir, topdown=True):
             for dir in dirs:
                 self.classes.append(dir)
 
         self.train_images: List[str] = []
         self.train_files: List[str] = []
-        train_dir = os.path.join(root_dir, 'bbbb/train')          # PARAMETER
+        train_dir = os.path.join(root_dir, 'dddd/train')          # PARAMETER
         for root, dirs, files in os.walk(top=train_dir, topdown=True):
             for name in files:
                 self.train_images.append(name)
