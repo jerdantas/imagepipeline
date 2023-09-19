@@ -1,0 +1,33 @@
+
+Project    labelbox    (labelling, reviewing)
+
+                  classes             new            class
+                  (count)           (count)       (  count)
+                                        
+                class list          image          image
+                                
+                 <  >  -  +          <  >            <  >
+                textbox            classify         review
+                
+               tree
+               folder
+               input                                  
+
+ ___________________________________________________________                                  
+
+(inference)
+
+                                 predict          same class
+                                        
+                   image          class              image                             
+                   <  >            <  >               <  >
+                                        
+                                 accept             undo
+                            
+                  total count: 000
+                     accepted: 000
+                      changed: 000
+                     accuracy: 00%
+                      
+                      input/folder
+
